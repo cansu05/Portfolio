@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .align-element {
+    @apply mx-auto max-w-6xl px-8;
+  }
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  @apply text-gray-950;
+  height: 100vh;
+}
