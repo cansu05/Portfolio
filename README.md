@@ -12,4 +12,4 @@ Bu proje, frontend geliştirme alanındaki yeteneklerimi sergilemek için oluşt
 
 ## 🔗 Canlı Demo
 
-
+https://portfolio-phi-rust-74.vercel.app/
