@@ -2,7 +2,7 @@ import AboutList from "./AboutList";
 
 const PersonalDetails = () => {
   return (
-    <section className="align-element flex flex-col items-center justify-center p-10 ">
+    <section className="align-element flex flex-col items-center justify-center py-10 lg:mt-0 mt-20">
       <div className="max-w-6xl ">
         <h1 className="text-3xl font-black mb-10 ">About Me</h1>
 

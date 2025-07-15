@@ -4,7 +4,7 @@ import { socials } from "../data";
 
 const Landing = () => {
   return (
-    <section className="align-element min-h-[calc(100vh-80px)] flex lg:flex-row flex-col items-center justify-center gap-20">
+    <section className="align-element min-h-[calc(100vh-80px)] h-screen flex lg:flex-row flex-col items-center justify-center lg:gap-20 gap-10 lg:mt-0 ">
       <div>
         <img
           src={portfolio}
@@ -14,8 +14,8 @@ const Landing = () => {
       </div>
 
       <div className="flex flex-col gap-3">
-        <div className=" flex flex-col items-start sm:items-center justify-center gap-6">
-          <h1 className="text-4xl font-black">CANSU UGUR</h1>
+        <div className="flex flex-col items-start sm:items-center justify-center gap-6">
+          <h1 className="text-4xl font-black ">CANSU UGUR</h1>
           <TypeWriter text="Front-end Developer" />
           <p className="text-gray-500 text-base font-medium tracking-wider max-w-lg  ">
             I develop user-centric, high-performance web interfaces with a
