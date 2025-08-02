@@ -1,13 +1,16 @@
 import PropTypes from "prop-types";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const ProjectCard = ({ project }) => {
   const { title, img, text, url, github } = project;
   return (
     <div className="flex flex-col bg-stone-300 p-3   h-auto  md:min-h-[650px] lg:h-[730px]">
       <div>
-        <img
+        <LazyLoadImage
           src={img}
           alt={title}
+          effect="blur"
           className="w-full h-auto object-cover rounded"
         />
       </div>
