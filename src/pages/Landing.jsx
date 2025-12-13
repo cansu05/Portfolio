@@ -1,4 +1,4 @@
-import portfolio from "../assets/portfolio.jpg";
+import portfolio from "../assets/portfolio-image.png";
 import TypeWriter from "../components/TypeWriter";
 import { socials } from "../data";
 
@@ -6,21 +6,17 @@ const Landing = () => {
   return (
     <section className="align-element min-h-[calc(100vh-80px)] h-screen flex lg:flex-row flex-col items-center justify-center lg:gap-20 gap-10 lg:mt-0 ">
       <div>
-        <img
-          src={portfolio}
-          alt="portfolio"
-          className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full shadow-lg border-4 border-gray-400"
-        />
+        <img src={portfolio} alt="portfolio" className="w-[500px] h-full" />
       </div>
 
-      <div className="flex flex-col gap-3">
-        <div className="flex flex-col items-start sm:items-center justify-center gap-6">
+      <div className="flex flex-col gap-3 ">
+        <div className="flex flex-col  justify-center gap-4">
           <h1 className="text-4xl font-black ">CANSU UGUR</h1>
           <TypeWriter text="Front-end Developer" />
-          <p className="text-gray-500 text-base font-medium tracking-wider max-w-lg  ">
-            I develop user-centric, high-performance web interfaces with a
-            strong focus on clean structure, scalability, and smooth user
-            experience.
+          <p className="text-gray-700 text-base font-medium tracking-wider max-w-lg  ">
+            Kullanıcı deneyimini merkeze alan, performanslı ve sürdürülebilir
+            web arayüzleri geliştiriyorum. Modern frontend teknolojileriyle
+            ölçeklenebilir çözümler üretiyorum.
           </p>
         </div>
         <div className="flex gap-2 sm:justify-center">

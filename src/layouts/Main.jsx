@@ -7,7 +7,7 @@ const MainLayout = () => {
       <div className="lg:w-72 w-full fixed z-50">
         <Navbar />
       </div>
-      <div className="w-full bg-stone-100 lg:pl-80 lg:px-20 px-5">
+      <div className="w-full bg-[#DFD5C9] lg:pl-80 ">
         <Outlet />
       </div>
     </div>
