@@ -26,6 +26,8 @@ import wessexDashboard13 from "./assets/images/wessex-dashboard/dashboard13.png"
 import wessexDashboard14 from "./assets/images/wessex-dashboard/dashboard14.png";
 import wessexDashboard15 from "./assets/images/wessex-dashboard/dashboard15.png";
 
+import blossom from "./assets/blossom.png";
+
 export const links = [
   {
     id: nanoid(),
@@ -95,7 +97,7 @@ export const socials = [
   },
   {
     id: nanoid(),
-    href: "https://drive.google.com/file/d/1hdn7k9j6PPJDl1kf_rXiPtRLZWZ6O-jr/view?usp=sharing",
+    href: "https://drive.google.com/file/d/1v8_pxqNVlZgG3EyKiiaBORFjLNQZMj2T/view?usp=sharing",
     name: "resume",
   },
 ];
@@ -116,12 +118,7 @@ export const skillsData = [
   },
   {
     category: "Backend & Veri Katmanı",
-    skills: [
-      "API Entegrasyonu",
-      "Middleware Geliştirme",
-      "PostgreSQL",
-      "Prisma ORM",
-    ],
+    skills: ["API Entegrasyonu", "Middleware Geliştirme"],
   },
   {
     category: "UI/UX & Tasarım",
@@ -129,11 +126,35 @@ export const skillsData = [
   },
   {
     category: "Ek Teknolojiler",
-    skills: ["Node.js", "Express.js", "React Native"],
+    skills: ["Node.js", "Express.js", "React Native", "PostgreSQL"],
   },
 ];
 
 export const projects = [
+  {
+    id: nanoid(),
+    images: [
+      wessexDashboard1,
+      wessexDashboard2,
+      wessexDashboard3,
+      wessexDashboard4,
+      wessexDashboard5,
+      wessexDashboard6,
+      wessexDashboard7,
+      wessexDashboard8,
+      wessexDashboard9,
+      wessexDashboard10,
+      wessexDashboard11,
+      wessexDashboard12,
+      wessexDashboard13,
+      wessexDashboard14,
+      wessexDashboard15,
+    ],
+    url: "https://searches.csu.azureapp.net/user/login",
+    github: "",
+    title: "Wessex Searches – Kurumsal Dashboard Uygulaması",
+    text: "Veriland bünyesinde, İngiltere merkezli Wessex Searches firması için geliştirilen web tabanlı kurumsal bir dashboard uygulamasıdır. Uygulama; çok adımlı kullanıcı kayıt süreci, harita üzerinden lokasyon seçimi, ürün belirleme, sepet ve ödeme adımlarını kapsayan uçtan uca bir sipariş akışı sunmaktadır. Dashboard tarafında sipariş yönetimi, müşteri taleplerinin (queries/cases) oluşturulması ve takibi, kullanıcı ve şube yönetimi ile fatura ve ödeme süreçlerine yönelik operasyonel modüller geliştirilmiştir. Proje Next.js ve TypeScript kullanılarak geliştirilmiş; state yönetimi için Zustand ve Context API birlikte kullanılmıştır. Arayüz Tailwind CSS ve Material-UI ile modüler ve ölçeklenebilir bir mimariyle tasarlanmıştır.",
+  },
   {
     id: nanoid(),
     images: [scandleted1, scandleted2, scandleted3, scandleted4, scandleted5],
@@ -158,28 +179,12 @@ export const projects = [
     title: "TaskFlow – Görev Yönetim Uygulaması",
     text: "Ekip içi iş birliğini destekleyen, sürükle-bırak özellikli modern bir görev yönetim web uygulaması geliştirilmiştir. Uygulama; görev oluşturma, düzenleme ve görevlerin farklı durumlar arasında taşınmasını destekleyen bir yapı sunmaktadır. Proje Next.js ve TypeScript ile geliştirilmiş, state yönetimi için Zustand tercih edilmiştir. Arayüz Material-UI ile tasarlanmış, performans ve kullanım kolaylığı ön planda tutulmuştur.",
   },
+
   {
     id: nanoid(),
-    images: [
-      wessexDashboard1,
-      wessexDashboard2,
-      wessexDashboard3,
-      wessexDashboard4,
-      wessexDashboard5,
-      wessexDashboard6,
-      wessexDashboard7,
-      wessexDashboard8,
-      wessexDashboard9,
-      wessexDashboard10,
-      wessexDashboard11,
-      wessexDashboard12,
-      wessexDashboard13,
-      wessexDashboard14,
-      wessexDashboard15,
-    ],
-    url: "https://searches.csu.azureapp.net/user/login",
-    github: "",
-    title: "Wessex Searches – Kurumsal Dashboard Uygulaması",
-    text: "Veriland bünyesinde, İngiltere merkezli Wessex Searches firması için geliştirilen web tabanlı kurumsal bir dashboard uygulamasıdır. Uygulama; çok adımlı kullanıcı kayıt süreci, harita üzerinden lokasyon seçimi, ürün belirleme, sepet ve ödeme adımlarını kapsayan uçtan uca bir sipariş akışı sunmaktadır. Dashboard tarafında sipariş yönetimi, müşteri taleplerinin (queries/cases) oluşturulması ve takibi, kullanıcı ve şube yönetimi ile fatura ve ödeme süreçlerine yönelik operasyonel modüller geliştirilmiştir. Proje Next.js ve TypeScript kullanılarak geliştirilmiş; state yönetimi için Zustand ve Context API birlikte kullanılmıştır. Arayüz Tailwind CSS ve Material-UI ile modüler ve ölçeklenebilir bir mimariyle tasarlanmıştır.",
+    images: [blossom],
+    github: "https://github.com/cansu05/Blossom",
+    title: "Blossom – Mobil Ürün Kataloğu Uygulaması",
+    text: "Çiçek ve bitki ürünlerinin sergilenmesine yönelik geliştirilen, mobil odaklı bir ürün katalog uygulamasıdır. Uygulama; ürün listeleme, ürün detay görüntüleme ve favorilere ekleme gibi temel kullanıcı etkileşimlerini içermektedir. Proje React Native ve TypeScript kullanılarak geliştirilmiş, ürün verileri Firebase üzerinden yönetilmiştir. Global state yönetimi için Redux kullanılarak ürün ve favori akışları yapılandırılmıştır. Uygulamanın tüm arayüz tasarımı ve kullanıcı deneyimi çalışmaları tarafımdan gerçekleştirilmiştir.",
   },
 ];

@@ -37,9 +37,7 @@ const ProjectCard = ({ project }) => {
         <Box
           sx={{
             position: "relative",
-            borderRadius: 2,
             overflow: "hidden",
-            height: { xs: 180, sm: 220, md: 280 },
             width: "100%",
             minWidth: 0,
           }}
