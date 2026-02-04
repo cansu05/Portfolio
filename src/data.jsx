@@ -1,12 +1,4 @@
 import { nanoid } from "nanoid";
-import {
-  FaHome,
-  FaUser,
-  FaBriefcase,
-  FaFileAlt,
-  FaLinkedin,
-  FaGithub,
-} from "react-icons/fa";
 
 import rickAndMorty from "./assets/rickAndMorty.png";
 
@@ -39,20 +31,20 @@ export const links = [
     id: nanoid(),
     href: "/",
     text: "Anasayfa",
-    icon: <FaHome className="h-5 w-5 text-gray-800  active:text-gray-950 " />,
+    iconName: "home",
   },
   {
     id: nanoid(),
     href: "about",
     text: "Hakkımda",
-    icon: <FaUser className="h-5 w-5  text-gray-800" />,
+    iconName: "person",
   },
 
   {
     id: nanoid(),
     href: "projects",
     text: "Projelerim",
-    icon: <FaBriefcase className="h-5 w-5 text-gray-800" />,
+    iconName: "work",
   },
 ];
 
@@ -94,17 +86,17 @@ export const socials = [
   {
     id: nanoid(),
     href: "https://github.com/cansu05",
-    icon: <FaGithub className="h-6 w-6 text-gray-700 hover:text-gray-950" />,
+    name: "github",
   },
   {
     id: nanoid(),
     href: "https://www.linkedin.com/in/cansuugur/",
-    icon: <FaLinkedin className="h-6 w-6 text-gray-700 hover:text-gray-950" />,
+    name: "linkedin",
   },
   {
     id: nanoid(),
     href: "https://drive.google.com/file/d/1hdn7k9j6PPJDl1kf_rXiPtRLZWZ6O-jr/view?usp=sharing",
-    icon: <FaFileAlt className="h-6 w-6 text-gray-700 hover:text-gray-950" />,
+    name: "resume",
   },
 ];
 

@@ -1,115 +1,216 @@
 import PropTypes from "prop-types";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-
-import { Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-
-import { useRef } from "react";
+import { useState } from "react";
+import {
+  Box,
+  Button,
+  IconButton,
+  MobileStepper,
+  Stack,
+  Typography,
+} from "@mui/material";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 const ProjectCard = ({ project }) => {
   const { title, images = [], text, url, github } = project;
-  const swiperRef = useRef(null);
+  const [activeStep, setActiveStep] = useState(0);
+  const maxSteps = images.length || 0;
 
   return (
-    <div className="flex flex-col rounded-lg bg-[#908275] p-5 min-h-[730px]">
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        borderRadius: 2,
+        bgcolor: "primary.main",
+        p: { xs: 2, sm: 2.5 },
+        width: "100%",
+        minWidth: 0,
+        maxWidth: "100%",
+        overflow: "hidden",
+        height: { xs: "auto", md: "100%" },
+      }}
+    >
       {images.length > 0 && (
-        <div className="relative rounded overflow-hidden h-full">
-          {images.length === 1 ? (
-            <LazyLoadImage
-              src={images[0]}
-              alt={title}
-              effect="blur"
-              className="w-full h-full object-cover"
-            />
-          ) : (
+        <Box
+          sx={{
+            position: "relative",
+            borderRadius: 2,
+            overflow: "hidden",
+            height: { xs: 180, sm: 220, md: 280 },
+            width: "100%",
+            minWidth: 0,
+          }}
+        >
+          <LazyLoadImage
+            src={images[activeStep]}
+            alt={title}
+            effect="blur"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              display: "block",
+            }}
+          />
+          {maxSteps > 1 && (
             <>
-              <Swiper
-                modules={[Pagination]}
-                pagination={{ clickable: true }}
-                onBeforeInit={(swiper) => {
-                  swiperRef.current = swiper;
+              <IconButton
+                type="button"
+                onClick={() => setActiveStep((prev) => Math.max(prev - 1, 0))}
+                aria-label="Previous image"
+                disabled={activeStep === 0}
+                sx={{
+                  position: "absolute",
+                  left: 8,
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  zIndex: 10,
+                  width: 36,
+                  height: 36,
+                  bgcolor: "rgba(223, 213, 201, 0.9)",
+                  border: "1px solid rgba(144, 130, 117, 0.4)",
+                  "&:hover": { bgcolor: "primary.main" },
                 }}
-                className="h-full"
               >
-                {images.map((img, index) => (
-                  <SwiperSlide key={index} className="h-full">
-                    <LazyLoadImage
-                      src={img}
-                      alt={`${title} ${index + 1}`}
-                      effect="blur"
-                      className="w-full h-full object-cover"
-                    />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+                <ChevronLeftIcon sx={{ color: "secondary.main" }} />
+              </IconButton>
 
-              <button
+              <IconButton
                 type="button"
-                onClick={() => swiperRef.current?.slidePrev()}
-                className="absolute left-2 top-1/2 -translate-y-1/2 z-10
-                           w-9 h-9 rounded-full bg-[#DFD5C9]/90 border border-[#908275]/40
-                           flex items-center justify-center hover:bg-[#DFD5C9] transition"
-                aria-label="Previous slide"
+                onClick={() =>
+                  setActiveStep((prev) => Math.min(prev + 1, maxSteps - 1))
+                }
+                aria-label="Next image"
+                disabled={activeStep === maxSteps - 1}
+                sx={{
+                  position: "absolute",
+                  right: 8,
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  zIndex: 10,
+                  width: 36,
+                  height: 36,
+                  bgcolor: "rgba(223, 213, 201, 0.9)",
+                  border: "1px solid rgba(144, 130, 117, 0.4)",
+                  "&:hover": { bgcolor: "primary.main" },
+                }}
               >
-                <span className="text-[#908275] text-lg font-black leading-none">
-                  ‹
-                </span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => swiperRef.current?.slideNext()}
-                className="absolute right-2 top-1/2 -translate-y-1/2 z-10
-                           w-9 h-9 rounded-full bg-[#DFD5C9]/90 border border-[#908275]/40
-                           flex items-center justify-center hover:bg-[#DFD5C9] transition"
-                aria-label="Next slide"
-              >
-                <span className="text-[#908275] text-lg font-black leading-none">
-                  ›
-                </span>
-              </button>
+                <ChevronRightIcon sx={{ color: "secondary.main" }} />
+              </IconButton>
             </>
           )}
-        </div>
+        </Box>
+      )}
+      {maxSteps > 1 && (
+        <MobileStepper
+          steps={maxSteps}
+          position="static"
+          activeStep={activeStep}
+          sx={{
+            mt: 1,
+            bgcolor: "transparent",
+            width: "100%",
+            justifyContent: "center",
+            "& .MuiMobileStepper-dots": { margin: 0 },
+            "& .MuiMobileStepper-dot": { bgcolor: "rgba(255, 255, 255, 0.5)" },
+            "& .MuiMobileStepper-dotActive": { bgcolor: "#DFD5C9" },
+          }}
+          nextButton={null}
+          backButton={null}
+        />
       )}
 
-      <div className="flex flex-col justify-between flex-grow mt-3 px-5">
-        <div>
-          <h4 className="text-lg text-white font-black min-h-[2.3rem] text-center">
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          flexGrow: 1,
+          mt: 2,
+          px: { xs: 0, sm: 2 },
+        }}
+      >
+        <Box>
+          <Typography
+            variant="h6"
+            fontWeight={900}
+            color="#fff"
+            sx={{
+              minHeight: "2.3rem",
+              textAlign: "center",
+              mb: { xs: 1, md: 0 },
+            }}
+          >
             {title}
-          </h4>
-          <p className="text-white text-base font-medium tracking-wider">
+          </Typography>
+          <Typography
+            variant="body1"
+            color="#fff"
+            fontWeight={500}
+            sx={{
+              letterSpacing: "0.03em",
+              fontSize: { xs: 14, sm: 16 },
+            }}
+          >
             {text}
-          </p>
-        </div>
+          </Typography>
+        </Box>
 
-        <div className="mt-4 flex gap-3">
+        <Stack
+          direction="row"
+          spacing={1.5}
+          sx={{ mt: 2.5, flexWrap: "wrap", rowGap: 1.5 }}
+        >
           {url && (
-            <a
+            <Button
+              component="a"
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="min-w-32 text-center px-4 py-3 bg-[#DFD5C9] text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-500 transition-colors"
+              sx={{
+                minWidth: 120,
+                px: 2,
+                py: 1.25,
+                bgcolor: "background.default",
+                color: "text.primary",
+                fontSize: 14,
+                fontWeight: 500,
+                borderRadius: 2,
+                textTransform: "none",
+                "&:hover": { bgcolor: "secondary.main" },
+              }}
             >
-              Live Site
-            </a>
+              Canlı Site
+            </Button>
           )}
           {github && (
-            <a
+            <Button
+              component="a"
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="min-w-32 text-center px-4 py-3 bg-[#DFD5C9] text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-500 transition-colors"
+              sx={{
+                minWidth: 120,
+                px: 2,
+                py: 1.25,
+                bgcolor: "background.default",
+                color: "text.primary",
+                fontSize: 14,
+                fontWeight: 500,
+                borderRadius: 2,
+                textTransform: "none",
+                "&:hover": { bgcolor: "secondary.main" },
+              }}
             >
-              GitHub Repo
-            </a>
+              Kaynak Kod
+            </Button>
           )}
-        </div>
-      </div>
-    </div>
+        </Stack>
+      </Box>
+    </Box>
   );
 };
 

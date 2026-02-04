@@ -1,20 +1,36 @@
 import { skillsData } from "../../data";
+import { Box, Typography } from "@mui/material";
 
 const SkillList = () => {
   return (
-    <div className="w-full grid lg:grid-cols-3 sm:grid-cols-1 lg:gap-0 gap-4 mt-4">
+    <Box
+      sx={{
+        width: "100%",
+        display: "grid",
+        gridTemplateColumns: { xs: "1fr", lg: "repeat(3, 1fr)" },
+        gap: { xs: 2, lg: 0 },
+        mt: 1,
+      }}
+    >
       {skillsData.map((item, index) => (
-        <div key={index}>
-          <h3 className="font-semibold text-lg mb-2">{item.category}</h3>
+        <Box key={index}>
+          <Typography variant="h6" fontWeight={600} sx={{ mb: 1 }}>
+            {item.category}
+          </Typography>
 
-          <ul className="list-disc pl-5 text-gray-800 space-y-1">
+          <Box
+            component="ul"
+            sx={{ pl: 3, m: 0, color: "text.primary", listStyle: "disc" }}
+          >
             {item.skills.map((skill, idx) => (
-              <li key={idx}>{skill}</li>
+              <Box component="li" key={idx} sx={{ mb: 0.5 }}>
+                {skill}
+              </Box>
             ))}
-          </ul>
-        </div>
+          </Box>
+        </Box>
       ))}
-    </div>
+    </Box>
   );
 };
 

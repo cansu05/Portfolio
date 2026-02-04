@@ -1,11 +1,28 @@
 import SkillList from "./SkillList";
+import { Container, Typography } from "@mui/material";
 
 const Knowledge = () => {
   return (
-    <section className="max-w-7xl align-element flex flex-col items-start justify-center mt-5">
-      <h2 className="text-xl font-bold tracking-wide ">Yeteneklerim</h2>
+    <Container
+      component="section"
+      maxWidth="xl"
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start",
+        justifyContent: "center",
+        mt: 5,
+      }}
+    >
+      <Typography
+        variant="h5"
+        fontWeight={700}
+        sx={{ letterSpacing: "0.04em" }}
+      >
+        Yeteneklerim
+      </Typography>
       <SkillList />
-    </section>
+    </Container>
   );
 };
 export default Knowledge;

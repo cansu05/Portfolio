@@ -1,15 +1,23 @@
 import { aboutData } from "../../data";
+import { Box, Stack, Typography } from "@mui/material";
 
 const AboutList = () => {
   return (
-    <div className="grid grid-cols-1 gap-2">
+    <Stack spacing={1} sx={{ width: "100%" }}>
       {Object.entries(aboutData).map(([key, value]) => (
-        <div key={key} className="flex gap-2">
-          <span className="capitalize text-gray-950 font-semibold">{key}:</span>
-          <span className="text-gray-800">{value}</span>
-        </div>
+        <Box key={key} sx={{ display: "flex", gap: 1 }}>
+          <Typography
+            component="span"
+            sx={{ textTransform: "capitalize", fontWeight: 600, color: "text.primary" }}
+          >
+            {key}:
+          </Typography>
+          <Typography component="span" color="text.primary">
+            {value}
+          </Typography>
+        </Box>
       ))}
-    </div>
+    </Stack>
   );
 };
 export default AboutList;

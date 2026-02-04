@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import { Typography } from "@mui/material";
 
 const TypeWriter = ({ text }) => {
   const [displayText, setDisplayText] = useState("");
@@ -16,7 +17,11 @@ const TypeWriter = ({ text }) => {
     }
   }, [index, text]);
 
-  return <h3 className="text-xl font-medium tracking-wide">{displayText}</h3>;
+  return (
+    <Typography variant="h6" fontWeight={500} sx={{ letterSpacing: "0.04em" }}>
+      {displayText}
+    </Typography>
+  );
 };
 
 TypeWriter.propTypes = {

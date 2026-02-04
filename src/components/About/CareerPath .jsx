@@ -1,30 +1,90 @@
 import { experienceData } from "../../data";
+import { Box, Container, Stack, Typography } from "@mui/material";
 
 const CareerPath = () => {
   return (
-    <section className=" max-w-7xl align-element flex flex-col items-start justify-center py-10 mt-5">
-      <h2 className="text-xl font-bold text-left">Deneyimlerim</h2>
+    <Container
+      component="section"
+      maxWidth="xl"
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start",
+        justifyContent: "center",
+        py: 5,
+        mt: 2,
+      }}
+    >
+      <Typography variant="h5" fontWeight={700}>
+        Deneyimlerim
+      </Typography>
       {experienceData.map((exp, index) => (
-        <div key={index} className="flex items-center gap-4 mt-5">
-          <div className="relative w-6 flex justify-center">
-            <div className="w-1 h-1 bg-gray-800 rounded-full absolute top-1/2 -translate-y-1/2"></div>
+        <Stack
+          key={index}
+          direction="row"
+          alignItems="center"
+          spacing={2}
+          sx={{ mt: 2 }}
+        >
+          <Box
+            sx={{
+              position: "relative",
+              width: 24,
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <Box
+              sx={{
+                width: 6,
+                height: 6,
+                bgcolor: "text.primary",
+                borderRadius: "50%",
+                position: "absolute",
+                top: "50%",
+                transform: "translateY(-50%)",
+              }}
+            />
             {index !== experienceData.length - 1 && (
-              <div className="absolute w-px h-full bg-gray-300 top-0 left-1/2 -translate-x-1/2"></div>
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: 0,
+                  bottom: 0,
+                  width: "1px",
+                  bgcolor: "grey.300",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                }}
+              />
             )}
-          </div>
+          </Box>
 
-          <div className="flex items-center gap-8">
-            <span className="bg-[#908275] text-white px-3 py-1 rounded-lg text-sm min-w-[150px] text-center">
+          <Stack direction="row" alignItems="center" spacing={3}>
+            <Box
+              sx={{
+                bgcolor: "#908275",
+                color: "#fff",
+                px: 1.5,
+                py: 0.5,
+                borderRadius: 1,
+                fontSize: 14,
+                minWidth: 150,
+                textAlign: "center",
+              }}
+            >
               {exp.year}
-            </span>
-            <div>
-              <h3 className="font-semibold">{exp.company}</h3>
-              <p className="text-gray-800 text-sm">{exp.position}</p>
-            </div>
-          </div>
-        </div>
+            </Box>
+            <Box>
+              <Typography fontWeight={600}>{exp.company}</Typography>
+              <Typography variant="body2" color="text.primary">
+                {exp.position}
+              </Typography>
+            </Box>
+          </Stack>
+        </Stack>
       ))}
-    </section>
+    </Container>
   );
 };
 

@@ -1,20 +1,38 @@
 import ProjectCard from "../components/project/ProjectCard";
 import { projects } from "../data";
+import { Box, Container, Typography } from "@mui/material";
 
 const Projects = () => {
   return (
-    <section className="my-20 lg:mt-20 mt-32 max-w-7xl align-element">
-      <h1 className="text-3xl font-black mb-8 ">Projelerim</h1>
-      <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-5 ">
+    <Container
+      component="section"
+      maxWidth="xl"
+      sx={{ my: 10, mt: { xs: 16, lg: 10 } }}
+    >
+      <Typography variant="h4" fontWeight={900} sx={{ mb: 4 }}>
+        Projelerim
+      </Typography>
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: {
+            xs: "1fr",
+            sm: "repeat(2, minmax(0, 1fr))",
+          },
+          alignItems: "stretch",
+          gridAutoRows: { xs: "auto", sm: "1fr" },
+          gap: { xs: 1.5, sm: 3 },
+        }}
+      >
         {projects.map((project) => {
           return (
-            <div key={project.id}>
+            <Box key={project.id} sx={{ height: { xs: "auto", sm: "100%" } }}>
               <ProjectCard project={project} />
-            </div>
+            </Box>
           );
         })}
-      </div>
-    </section>
+      </Box>
+    </Container>
   );
 };
 export default Projects;

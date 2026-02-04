@@ -1,36 +1,63 @@
 import portfolio from "../assets/portfolio-image.png";
+import Icon from "../components/Icon";
 import TypeWriter from "../components/TypeWriter";
 import { socials } from "../data";
+import { Box, Container, Link, Stack, Typography } from "@mui/material";
 
 const Landing = () => {
   return (
-    <section className="align-element min-h-[calc(100vh-80px)] h-screen flex lg:flex-row flex-col items-center justify-center lg:gap-20 gap-10 lg:mt-0 ">
-      <div>
-        <img src={portfolio} alt="portfolio" className="w-[500px] h-full" />
-      </div>
+    <Container
+      component="section"
+      maxWidth="xl"
+      sx={{
+        minHeight: "calc(100vh - 80px)",
+        height: "100vh",
+        display: "flex",
+        flexDirection: { xs: "column", lg: "row" },
+        alignItems: "center",
+        justifyContent: "center",
+        gap: { xs: "40px", lg: "80px" },
+        mt: { lg: 0 },
+      }}
+    >
+      <Box>
+        <Box
+          component="img"
+          src={portfolio}
+          alt="portfolio"
+          sx={{ width: { xs: "100%", md: 500 }, height: "auto" }}
+        />
+      </Box>
 
-      <div className="flex flex-col gap-3 ">
-        <div className="flex flex-col  justify-center gap-4">
-          <h1 className="text-4xl font-black ">CANSU UGUR</h1>
+      <Stack spacing={2}>
+        <Stack spacing={2} justifyContent="center">
+          <Typography variant="h3" fontWeight={900}>
+            CANSU UĞUR
+          </Typography>
           <TypeWriter text="Front-end Developer" />
-          <p className="text-gray-700 text-base font-medium tracking-wider max-w-lg  ">
+          <Typography
+            variant="body1"
+            color="text.primary"
+            fontWeight={500}
+            sx={{ letterSpacing: "0.05em", maxWidth: "32rem" }}
+          >
             Kullanıcı deneyimini merkeze alan, performanslı ve sürdürülebilir
             web arayüzleri geliştiriyorum. Modern frontend teknolojileriyle
             ölçeklenebilir çözümler üretiyorum.
-          </p>
-        </div>
-        <div className="flex gap-2 sm:justify-center">
+          </Typography>
+        </Stack>
+        <Stack direction="row" spacing={1} justifyContent="center">
           {socials.map((social) => {
-            const { id, href, icon } = social;
+            const { id, href, name } = social;
             return (
-              <a key={id} href={href} target="_blank">
-                {icon}
-              </a>
+              <Link key={id} href={href} target="_blank" rel="noreferrer">
+                <Icon name={name} />
+              </Link>
             );
           })}
-        </div>
-      </div>
-    </section>
+        </Stack>
+      </Stack>
+    </Container>
   );
 };
 export default Landing;
