@@ -41,6 +41,11 @@ const PersonalDetails = () => {
             entegrasyonları üzerine aktif rol aldım. Ayrıca web sitesi tasarlama
             ve görsel içerik hazırlama konularında da çalıştım.
             <br /> <br />
+            Bunun yanında, teknik yetkinliğimi derinleştirmek ve ürün geliştirme
+            sürecine daha bütüncül katkı sağlayabilmek için backend ve mobil
+            geliştirme alanlarında da çalışmalar yapıyorum. Node.js, Express ve
+            React Native gibi teknolojilerle stack’imi genişletiyorum.
+            <br /> <br />
             Benim için önemli olan; kodun okunabilir, düzenli ve uzun vadede
             sürdürülebilir olması. Ürün geliştirme sürecinde ihtiyacı net analiz
             etmeye, işlevselliği önceliklendirmeye ve arayüzü kullanıcı deneyimi

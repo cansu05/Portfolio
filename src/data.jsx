@@ -104,21 +104,32 @@ export const skillsData = [
   {
     category: "Frontend Geliştirme",
     skills: [
-      "HTML, CSS, JavaScript, TypeScript React.js, Next.js, Redux, Zustand",
-      "CSS, Sass, Tailwind CSS, Bootstrap, Material UI,Shadcn/UI",
+      "HTML, CSS, JavaScript, TypeScript",
+      "React.js, Next.js",
+      "Redux Toolkit, Zustand",
+      "Responsive Web Design",
     ],
   },
   {
-    category: "Backend & Entegrasyon",
+    category: "Stil & UI Kütüphaneleri",
+    skills: ["CSS, Sass", "Tailwind CSS, Bootstrap", "Material UI, shadcn/ui"],
+  },
+  {
+    category: "Backend & Veri Katmanı",
     skills: [
-      "API entegrasyonu",
-      "Middleware geliştirme",
-      "PostgreSQL, Prisma ORM",
+      "API Entegrasyonu",
+      "Middleware Geliştirme",
+      "PostgreSQL",
+      "Prisma ORM",
     ],
   },
   {
     category: "UI/UX & Tasarım",
-    skills: ["Adobe Photoshop", "Figma", "Canva"],
+    skills: ["Figma", "Adobe Photoshop", "Canva"],
+  },
+  {
+    category: "Ek Teknolojiler",
+    skills: ["Node.js", "Express.js", "React Native"],
   },
 ];
 
@@ -128,16 +139,16 @@ export const projects = [
     images: [scandleted1, scandleted2, scandleted3, scandleted4, scandleted5],
     url: "https://scandleted-five.vercel.app/",
     github: "https://github.com/cansu05/Scandleted",
-    title: "Scandleted – E-ticaret Uygulaması",
-    text: "Mum ürünlerini sergilemek ve satışa sunmak için mobil uyumlu bir e-ticaret uygulaması geliştirildi. Kullanıcılar ürünleri listeleyebilir, detaylarını inceleyebilir ve sepet üzerinden satın alma sürecini yönetebilir. Uygulama Next.js 15, TypeScript ve Prisma ile geliştirildi; Supabase backend olarak entegre edildi ve Clerk ile kullanıcı kimlik doğrulaması sağlandı. Arayüz Tailwind CSS ve shadcn/ui ile tasarlandı. Yüksek performans ve ölçeklenebilirlik için Vercel üzerinde yayına alındı.",
+    title: "Scandleted – E-Ticaret Web Uygulaması",
+    text: "Mum ürünlerinin sergilenmesi ve satışa sunulması amacıyla mobil uyumlu, modern bir e-ticaret web uygulaması geliştirilmiştir. Uygulama; ürün listeleme, ürün detay görüntüleme ve sepet üzerinden satın alma akışını kapsayan uçtan uca bir alışveriş deneyimi sunmaktadır. Proje Next.js 15 ve TypeScript ile geliştirilmiş, veri yönetimi için Prisma ve Supabase entegre edilmiştir. Kullanıcı kimlik doğrulama süreçleri Clerk ile sağlanmış, arayüz Tailwind CSS ve shadcn/ui kullanılarak tasarlanmıştır. Uygulama, yüksek performans ve ölçeklenebilirlik hedeflenerek Vercel üzerinde yayına alınmıştır.",
   },
   {
     id: nanoid(),
     images: [rickAndMorty],
     url: "https://ricky-and-morty-omega-seven.vercel.app/character",
     github: "https://github.com/cansu05/RickyAndMorty",
-    title: "Rick and Morty Karakter Kataloğu",
-    text: "Next.js 15 ve TypeScript ile geliştirilen, Rick and Morty açık API’si üzerinden veri alan bir karakter katalog uygulaması. Redux Toolkit ile global state yönetimi, dinamik filtreleme ve sayfalama yapıları kuruldu. Responsive arayüz ve Vercel deployment sağlandı.",
+    title: "Rick and Morty – Karakter Kataloğu Uygulaması",
+    text: "Rick and Morty açık API’si kullanılarak geliştirilen, karakter listeleme ve detay inceleme odaklı bir web uygulamasıdır. Proje Next.js 15 ve TypeScript ile geliştirilmiş; global state yönetimi için Redux Toolkit kullanılmıştır. Dinamik filtreleme ve sayfalama yapıları uygulanarak kullanıcı deneyimi güçlendirilmiş, responsive tasarım prensipleri doğrultusunda farklı cihazlara uyum sağlanmıştır. Uygulama Vercel üzerinde yayına alınmıştır.",
   },
   {
     id: nanoid(),
@@ -145,7 +156,7 @@ export const projects = [
     url: "",
     github: "https://github.com/cansu05/Task-Flow",
     title: "TaskFlow – Görev Yönetim Uygulaması",
-    text: "Next.js, Zustand, TypeScript ve Material-UI kullanılarak sürükle-bırak özellikli modern bir görev yönetim uygulaması geliştirildi. Görevlerin oluşturulması, düzenlenmesi ve durumlar arasında taşınmasını destekleyen, ekip içi iş birliği odaklı ve mobil uyumlu bir arayüz tasarlandı. Hafif state yönetimi ve performans odaklı bir yapı oluşturuldu.",
+    text: "Ekip içi iş birliğini destekleyen, sürükle-bırak özellikli modern bir görev yönetim web uygulaması geliştirilmiştir. Uygulama; görev oluşturma, düzenleme ve görevlerin farklı durumlar arasında taşınmasını destekleyen bir yapı sunmaktadır. Proje Next.js ve TypeScript ile geliştirilmiş, state yönetimi için Zustand tercih edilmiştir. Arayüz Material-UI ile tasarlanmış, performans ve kullanım kolaylığı ön planda tutulmuştur.",
   },
   {
     id: nanoid(),
@@ -168,7 +179,7 @@ export const projects = [
     ],
     url: "https://searches.csu.azureapp.net/user/login",
     github: "",
-    title: "Dashboard – Wessex Searches (UK)",
-    text: "Veriland bünyesinde, İngiltere merkezli Wessex Searches firması için geliştirilen çok adımlı bir web tabanlı sipariş ve yönetim dashboard uygulamasıdır.Uygulama; çok adımlı kayıt süreciyle başlayan kullanıcı akışının ardından, harita üzerinden lokasyon seçimi, ürün belirleme, sepet ve ödeme adımlarını kapsayan uçtan uca bir sipariş süreci sunar.Dashboard tarafında siparişlerin görüntülenmesi ve yönetilmesi, müşteri taleplerinin (queries/cases) oluşturulması ve takibi, kullanıcı ve şube yönetimi, fatura ve ödeme süreçleri gibi operasyonel modüller geliştirilmiştir.Proje, Next.js ve TypeScript kullanılarak geliştirilmiş; state yönetimi için Zustand ve Context API birlikte kullanılmıştır. Arayüz yapısı Tailwind CSS ve Material UI ile modüler, ölçeklenebilir ve kurumsal bir mimariyle oluşturulmuştur.",
+    title: "Wessex Searches – Kurumsal Dashboard Uygulaması",
+    text: "Veriland bünyesinde, İngiltere merkezli Wessex Searches firması için geliştirilen web tabanlı kurumsal bir dashboard uygulamasıdır. Uygulama; çok adımlı kullanıcı kayıt süreci, harita üzerinden lokasyon seçimi, ürün belirleme, sepet ve ödeme adımlarını kapsayan uçtan uca bir sipariş akışı sunmaktadır. Dashboard tarafında sipariş yönetimi, müşteri taleplerinin (queries/cases) oluşturulması ve takibi, kullanıcı ve şube yönetimi ile fatura ve ödeme süreçlerine yönelik operasyonel modüller geliştirilmiştir. Proje Next.js ve TypeScript kullanılarak geliştirilmiş; state yönetimi için Zustand ve Context API birlikte kullanılmıştır. Arayüz Tailwind CSS ve Material-UI ile modüler ve ölçeklenebilir bir mimariyle tasarlanmıştır.",
   },
 ];
