@@ -1,4 +1,4 @@
-# 🧑‍💻 Kişisel Geliştirici Portfolyom – React 19 + Vite + Tailwind CSS
+# 🧑‍💻 Kişisel Geliştirici Portfolyom 
 
 Bu proje, frontend geliştirme alanındaki yeteneklerimi sergilemek için oluşturduğum kişisel portfolyo sitemdir.  
 **React 19**, **Vite** ve **Tailwind CSS** kullanılarak geliştirilmiştir.
