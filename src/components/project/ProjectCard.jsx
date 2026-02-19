@@ -1,6 +1,4 @@
 import PropTypes from "prop-types";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
 import { useState } from "react";
 import {
   Box,
@@ -40,13 +38,17 @@ const ProjectCard = ({ project }) => {
             overflow: "hidden",
             width: "100%",
             minWidth: 0,
+            borderRadius: 1.5,
+            aspectRatio: "16 / 10",
+            flexShrink: 0,
           }}
         >
-          <LazyLoadImage
+          <Box
+            component="img"
             src={images[activeStep]}
             alt={title}
-            effect="blur"
-            style={{
+            loading="lazy"
+            sx={{
               width: "100%",
               height: "100%",
               objectFit: "cover",
@@ -108,7 +110,7 @@ const ProjectCard = ({ project }) => {
           position="static"
           activeStep={activeStep}
           sx={{
-            mt: 1,
+            mt: 1.25,
             bgcolor: "transparent",
             width: "100%",
             justifyContent: "center",
@@ -127,8 +129,9 @@ const ProjectCard = ({ project }) => {
           flexDirection: "column",
           justifyContent: "space-between",
           flexGrow: 1,
-          mt: 2,
+          mt: 1.5,
           px: { xs: 0, sm: 2 },
+          gap: 1.25,
         }}
       >
         <Box>
@@ -139,7 +142,8 @@ const ProjectCard = ({ project }) => {
             sx={{
               minHeight: "2.3rem",
               textAlign: "center",
-              mb: { xs: 1, md: 0 },
+              mb: 1,
+              lineHeight: 1.25,
             }}
           >
             {title}

@@ -21,7 +21,8 @@ const Projects = () => {
           },
           alignItems: "stretch",
           gridAutoRows: { xs: "auto", sm: "1fr" },
-          gap: { xs: 1.5, sm: 3 },
+          columnGap: { xs: 1.5, sm: 6 },
+          rowGap: { xs: 3.5, sm: 6 },
         }}
       >
         {projects.map((project) => {

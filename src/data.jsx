@@ -8,6 +8,10 @@ import scandleted3 from "./assets/images/scandleted/scandleted-3.png";
 import scandleted4 from "./assets/images/scandleted/scandleted-4.png";
 import scandleted5 from "./assets/images/scandleted/scandleted-5.png";
 
+import lilyaEstate1 from "./assets/images/realEstate/lilya-estate-1.png";
+import lilyaEstate2 from "./assets/images/realEstate/lilya-estate-2.png";
+import lilyaEstate3 from "./assets/images/realEstate/real-estate-3.png";
+
 import taskManagement from "./assets/taskManagement.jpeg";
 
 import wessexDashboard1 from "./assets/images/wessex-dashboard/dashboard1.png";
@@ -97,7 +101,7 @@ export const socials = [
   },
   {
     id: nanoid(),
-    href: "https://drive.google.com/file/d/1v8_pxqNVlZgG3EyKiiaBORFjLNQZMj2T/view?usp=sharing",
+    href: "https://drive.google.com/file/d/1KaavUq2PZpmDGkuKlmz1WmNpM2eq_Fv-/view?usp=sharing",
     name: "resume",
   },
 ];
@@ -133,6 +137,22 @@ export const skillsData = [
 export const projects = [
   {
     id: nanoid(),
+    images: [lilyaEstate1, lilyaEstate2, lilyaEstate3],
+    url: "",
+    github: "",
+    title: "Lilya Estate - Emlak Platformu",
+    text: "Gayrimenkul kesfi, filtreleme ve detayli ilan goruntuleme ozellikleri sunan uctan uca bir emlak platformu gelistirdim. Frontend mimarisini Next.js 16 ve React 19 ile responsive ve SEO uyumlu olacak sekilde kurguladim. Backend tarafinda Node.js, Express ve Prisma ORM kullanarak RESTful API yapisi olusturdum; veri katmaninda PostgreSQL (Neon) ile olceklenebilir ve guvenilir bir yapi kurdum. Lokasyon bazli arama, gelismis filtreleme ve harita destekli gezinme deneyimini hayata gecirdim. Ilanlar icin gorsel galerili ve yapilandirilmis veri iceren detay sayfalari gelistirdim. Frontend'i Vercel, backend'i Render uzerinde yayina alarak production surecini uctan uca yonettim. Performans optimizasyonu ve surdurulebilir mimari iyilestirmelerini uyguladim; projeyi ilan yonetimi ve icerik duzenleme sureclerini merkezilestirecek bir admin panel ile genisletmeye devam ediyorum.",
+  },
+  {
+    id: nanoid(),
+    images: [scandleted1, scandleted2, scandleted3, scandleted4, scandleted5],
+    url: "https://scandleted-five.vercel.app/",
+    github: "https://github.com/cansu05/Scandleted",
+    title: "Scandleted – E-Ticaret Web Uygulaması",
+    text: "Mum ürünlerinin sergilenmesi ve satışa sunulması amacıyla mobil uyumlu, modern bir e-ticaret web uygulaması geliştirilmiştir. Uygulama; ürün listeleme, ürün detay görüntüleme ve sepet üzerinden satın alma akışını kapsayan uçtan uca bir alışveriş deneyimi sunmaktadır. Proje Next.js 15 ve TypeScript ile geliştirilmiş, veri yönetimi için Prisma ve Supabase entegre edilmiştir. Kullanıcı kimlik doğrulama süreçleri Clerk ile sağlanmış, arayüz Tailwind CSS ve shadcn/ui kullanılarak tasarlanmıştır. Uygulama, yüksek performans ve ölçeklenebilirlik hedeflenerek Vercel üzerinde yayına alınmıştır.",
+  },
+  {
+    id: nanoid(),
     images: [
       wessexDashboard1,
       wessexDashboard2,
@@ -155,14 +175,7 @@ export const projects = [
     title: "Wessex Searches – Kurumsal Dashboard Uygulaması",
     text: "Veriland bünyesinde, İngiltere merkezli Wessex Searches firması için geliştirilen web tabanlı kurumsal bir dashboard uygulamasıdır. Uygulama; çok adımlı kullanıcı kayıt süreci, harita üzerinden lokasyon seçimi, ürün belirleme, sepet ve ödeme adımlarını kapsayan uçtan uca bir sipariş akışı sunmaktadır. Dashboard tarafında sipariş yönetimi, müşteri taleplerinin (queries/cases) oluşturulması ve takibi, kullanıcı ve şube yönetimi ile fatura ve ödeme süreçlerine yönelik operasyonel modüller geliştirilmiştir. Proje Next.js ve TypeScript kullanılarak geliştirilmiş; state yönetimi için Zustand ve Context API birlikte kullanılmıştır. Arayüz Tailwind CSS ve Material-UI ile modüler ve ölçeklenebilir bir mimariyle tasarlanmıştır.",
   },
-  {
-    id: nanoid(),
-    images: [scandleted1, scandleted2, scandleted3, scandleted4, scandleted5],
-    url: "https://scandleted-five.vercel.app/",
-    github: "https://github.com/cansu05/Scandleted",
-    title: "Scandleted – E-Ticaret Web Uygulaması",
-    text: "Mum ürünlerinin sergilenmesi ve satışa sunulması amacıyla mobil uyumlu, modern bir e-ticaret web uygulaması geliştirilmiştir. Uygulama; ürün listeleme, ürün detay görüntüleme ve sepet üzerinden satın alma akışını kapsayan uçtan uca bir alışveriş deneyimi sunmaktadır. Proje Next.js 15 ve TypeScript ile geliştirilmiş, veri yönetimi için Prisma ve Supabase entegre edilmiştir. Kullanıcı kimlik doğrulama süreçleri Clerk ile sağlanmış, arayüz Tailwind CSS ve shadcn/ui kullanılarak tasarlanmıştır. Uygulama, yüksek performans ve ölçeklenebilirlik hedeflenerek Vercel üzerinde yayına alınmıştır.",
-  },
+
   {
     id: nanoid(),
     images: [rickAndMorty],
