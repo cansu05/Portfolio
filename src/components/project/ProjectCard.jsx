@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Box,
   Button,
   IconButton,
   MobileStepper,
+  Skeleton,
   Stack,
   Typography,
 } from "@mui/material";
@@ -14,7 +15,129 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 const ProjectCard = ({ project }) => {
   const { title, images = [], text, url, github } = project;
   const [activeStep, setActiveStep] = useState(0);
+  const [isImageLoading, setIsImageLoading] = useState(images.length > 0);
+  const [isCardLoading, setIsCardLoading] = useState(true);
   const maxSteps = images.length || 0;
+  const IMAGE_ASPECT_RATIO = "16 / 10";
+  const MIN_SKELETON_MS = 700;
+  const CARD_SKELETON_MS = 900;
+  const loadStartRef = useRef(Date.now());
+  const hideSkeletonTimeoutRef = useRef(null);
+
+  useEffect(() => {
+    if (hideSkeletonTimeoutRef.current) {
+      clearTimeout(hideSkeletonTimeoutRef.current);
+      hideSkeletonTimeoutRef.current = null;
+    }
+
+    if (images.length > 0) {
+      loadStartRef.current = Date.now();
+      setIsImageLoading(true);
+    } else {
+      setIsImageLoading(false);
+    }
+  }, [activeStep, images.length]);
+
+  useEffect(() => {
+    return () => {
+      if (hideSkeletonTimeoutRef.current) {
+        clearTimeout(hideSkeletonTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsCardLoading(false);
+    }, CARD_SKELETON_MS);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleImageSettled = () => {
+    const elapsed = Date.now() - loadStartRef.current;
+    const delay = Math.max(MIN_SKELETON_MS - elapsed, 0);
+
+    if (hideSkeletonTimeoutRef.current) {
+      clearTimeout(hideSkeletonTimeoutRef.current);
+    }
+
+    hideSkeletonTimeoutRef.current = setTimeout(() => {
+      setIsImageLoading(false);
+      hideSkeletonTimeoutRef.current = null;
+    }, delay);
+  };
+
+  if (isCardLoading) {
+    return (
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          borderRadius: 2,
+          bgcolor: "primary.main",
+          p: { xs: 2, sm: 2.5 },
+          width: "100%",
+          minWidth: 0,
+          maxWidth: "100%",
+          overflow: "hidden",
+          height: "auto",
+        }}
+      >
+        <Box
+          sx={{
+            position: "relative",
+            overflow: "hidden",
+            width: "100%",
+            minWidth: 0,
+            borderRadius: 1.5,
+            height: "300px",
+            minHeight: "300px",
+            maxHeight: "300px",
+            flexShrink: 0,
+          }}
+        >
+          <Skeleton
+            variant="rectangular"
+            animation="wave"
+            sx={{ position: "absolute", inset: 0 }}
+          />
+        </Box>
+        <Skeleton
+          variant="text"
+          animation="wave"
+          sx={{ mt: 2, mx: "auto", width: "70%", height: 38 }}
+        />
+        <Skeleton
+          variant="text"
+          animation="wave"
+          sx={{ mt: 0.5, width: "100%", height: 26 }}
+        />
+        <Skeleton
+          variant="text"
+          animation="wave"
+          sx={{ width: "96%", height: 26 }}
+        />
+        <Skeleton
+          variant="text"
+          animation="wave"
+          sx={{ width: "92%", height: 26 }}
+        />
+        <Box sx={{ mt: 2, display: "flex", gap: 1.5 }}>
+          <Skeleton
+            variant="rounded"
+            animation="wave"
+            sx={{ width: 120, height: 44, borderRadius: 2 }}
+          />
+          <Skeleton
+            variant="rounded"
+            animation="wave"
+            sx={{ width: 120, height: 44, borderRadius: 2 }}
+          />
+        </Box>
+      </Box>
+    );
+  }
 
   return (
     <Box
@@ -39,7 +162,7 @@ const ProjectCard = ({ project }) => {
             width: "100%",
             minWidth: 0,
             borderRadius: 1.5,
-            aspectRatio: "16 / 10",
+            aspectRatio: IMAGE_ASPECT_RATIO,
             flexShrink: 0,
           }}
         >
@@ -48,13 +171,29 @@ const ProjectCard = ({ project }) => {
             src={images[activeStep]}
             alt={title}
             loading="lazy"
+            onLoad={handleImageSettled}
+            onError={handleImageSettled}
             sx={{
               width: "100%",
               height: "100%",
               objectFit: "cover",
               display: "block",
+              opacity: isImageLoading ? 0 : 1,
+              transition: "opacity 520ms ease",
             }}
           />
+          {isImageLoading && (
+            <Skeleton
+              variant="rectangular"
+              animation="wave"
+              sx={{
+                position: "absolute",
+                inset: 0,
+                bgcolor: "rgba(223, 213, 201, 0.22)",
+                animationDuration: "2.4s",
+              }}
+            />
+          )}
           {maxSteps > 1 && (
             <>
               <IconButton

@@ -138,8 +138,8 @@ export const projects = [
   {
     id: nanoid(),
     images: [lilyaEstate1, lilyaEstate2, lilyaEstate3],
-    url: "",
-    github: "",
+    url: "https://lilya-estate-web.vercel.app/",
+    github: "https://github.com/cansu05/Lilya-Estate",
     title: "Lilya Estate - Emlak Platformu",
     text: "Gayrimenkul kesfi, filtreleme ve detayli ilan goruntuleme ozellikleri sunan uctan uca bir emlak platformu gelistirdim. Frontend mimarisini Next.js 16 ve React 19 ile responsive ve SEO uyumlu olacak sekilde kurguladim. Backend tarafinda Node.js, Express ve Prisma ORM kullanarak RESTful API yapisi olusturdum; veri katmaninda PostgreSQL (Neon) ile olceklenebilir ve guvenilir bir yapi kurdum. Lokasyon bazli arama, gelismis filtreleme ve harita destekli gezinme deneyimini hayata gecirdim. Ilanlar icin gorsel galerili ve yapilandirilmis veri iceren detay sayfalari gelistirdim. Frontend'i Vercel, backend'i Render uzerinde yayina alarak production surecini uctan uca yonettim. Performans optimizasyonu ve surdurulebilir mimari iyilestirmelerini uyguladim; projeyi ilan yonetimi ve icerik duzenleme sureclerini merkezilestirecek bir admin panel ile genisletmeye devam ediyorum.",
   },
