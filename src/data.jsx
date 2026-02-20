@@ -155,7 +155,7 @@ export const projects = [
   {
     id: nanoid(),
     images: [arekaWebsite],
-    url: "https://areka-corporate-website.vercel.app/tr",
+    url: "https://areka-corporate-website.vercel.app",
     github: "https://github.com/cansu05/Areka-Corporate-Website",
     title: "Areka Carbon Hub - İklim Teknolojisi Platformu",
     text: "Bireylerin ve kurumların karbon ayak izini anlamasına yardımcı olan, çok dilli içerik sunan modern bir kurumsal web sitesi geliştirdim. Platform, sürdürülebilirlik çözümlerini anlaşılır ve erişilebilir bir şekilde sunmayı amaçlıyor.",
