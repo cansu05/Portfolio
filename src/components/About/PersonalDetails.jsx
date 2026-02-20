@@ -30,21 +30,21 @@ const PersonalDetails = () => {
 
         <Box>
           <Typography variant="body1" color="text.primary" fontWeight={500}>
-            Merhaba, ben kullanıcı odaklı ve performanslı arayüzler geliştiren
-            bir Frontend Developer’ım. React ve Next.js gibi modern web
-            teknolojileriyle çalışarak, işlevsel ve sürdürülebilir arayüz
-            çözümleri üretiyorum.
+            Merhaba, ben kullanıcı odaklı ve performanslı web uygulamaları
+            geliştiren bir Frontend Developer’ım. React ve Next.js ekosistemiyle
+            çalışarak; dashboard’lar, kurumsal paneller ve ürün odaklı arayüzler
+            tasarlıyor ve geliştiriyorum.
             <br /> <br />
-            Profesyonel deneyimimde; yönetim panelleri, bileşen kütüphaneleri ve
-            ürün odaklı arayüzler geliştirdim. Proje süreçlerinde tasarımın
-            uygulanması, bileşen mimarisinin kurulması ve backend
-            entegrasyonları üzerine aktif rol aldım. Ayrıca web sitesi tasarlama
-            ve görsel içerik hazırlama konularında da çalıştım.
+            Profesyonel deneyimimde, tasarımın koda dönüştürülmesinden bileşen
+            mimarisinin kurulmasına ve backend entegrasyonlarına kadar ürün
+            geliştirme sürecinin birçok aşamasında aktif rol aldım.
+            Ölçeklenebilir, sürdürülebilir ve gerçek kullanım senaryolarına
+            uygun arayüzler üretmeye odaklanıyorum.
             <br /> <br />
-            Bunun yanında, teknik yetkinliğimi derinleştirmek ve ürün geliştirme
-            sürecine daha bütüncül katkı sağlayabilmek için backend ve mobil
-            geliştirme alanlarında da çalışmalar yapıyorum. Node.js, Express ve
-            React Native gibi teknolojilerle stack’imi genişletiyorum.
+            Teknik yetkinliğimi genişletmek için backend ve mobil geliştirme
+            alanlarında da çalışıyorum. Node.js, Express ve React Native ile
+            full-stack bakış açımı güçlendirerek ürün geliştirme süreçlerine
+            daha bütüncül katkı sağlamayı hedefliyorum.
             <br /> <br />
             Benim için önemli olan; kodun okunabilir, düzenli ve uzun vadede
             sürdürülebilir olması. Ürün geliştirme sürecinde ihtiyacı net analiz

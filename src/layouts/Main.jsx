@@ -18,7 +18,7 @@ const MainLayout = () => {
       >
         <Box
           sx={{
-            width: { xs: "100%", lg: "288px" },
+            width: { xs: "100%", lg: "336px" },
             position: "fixed",
             zIndex: 50,
           }}
@@ -31,7 +31,7 @@ const MainLayout = () => {
             width: "100%",
             minWidth: 0,
             bgcolor: "background.default",
-            ml: { xs: 0, lg: "288px" },
+            ml: { xs: 0, lg: "336px" },
             px: { xs: 2, md: 0 },
             boxSizing: "border-box",
           }}

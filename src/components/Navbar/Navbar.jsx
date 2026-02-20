@@ -77,7 +77,7 @@ const Navbar = () => {
           top: 0,
           left: 0,
           zIndex: (theme) => theme.zIndex.appBar,
-          width: "288px",
+          width: "336px",
         }}
       >
         <NavLinks direction="column" />

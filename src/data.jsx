@@ -13,6 +13,7 @@ import lilyaEstate2 from "./assets/images/realEstate/lilya-estate-2.png";
 import lilyaEstate3 from "./assets/images/realEstate/real-estate-3.png";
 
 import taskManagement from "./assets/taskManagement.jpeg";
+import arekaWebsite from "./assets/areka-website.png";
 
 import wessexDashboard1 from "./assets/images/wessex-dashboard/dashboard1.png";
 import wessexDashboard2 from "./assets/images/wessex-dashboard/dashboard2.png";
@@ -141,7 +142,7 @@ export const projects = [
     url: "https://lilya-estate-web.vercel.app/",
     github: "https://github.com/cansu05/Lilya-Estate",
     title: "Lilya Estate - Emlak Platformu",
-    text: "Gayrimenkul kesfi, filtreleme ve detayli ilan goruntuleme ozellikleri sunan uctan uca bir emlak platformu gelistirdim. Frontend mimarisini Next.js 16 ve React 19 ile responsive ve SEO uyumlu olacak sekilde kurguladim. Backend tarafinda Node.js, Express ve Prisma ORM kullanarak RESTful API yapisi olusturdum; veri katmaninda PostgreSQL (Neon) ile olceklenebilir ve guvenilir bir yapi kurdum. Lokasyon bazli arama, gelismis filtreleme ve harita destekli gezinme deneyimini hayata gecirdim. Ilanlar icin gorsel galerili ve yapilandirilmis veri iceren detay sayfalari gelistirdim. Frontend'i Vercel, backend'i Render uzerinde yayina alarak production surecini uctan uca yonettim. Performans optimizasyonu ve surdurulebilir mimari iyilestirmelerini uyguladim; projeyi ilan yonetimi ve icerik duzenleme sureclerini merkezilestirecek bir admin panel ile genisletmeye devam ediyorum.",
+    text: "Kullanıcıların konum, filtre ve harita desteğiyle ilan arayabildiği, detaylı mülk bilgilerine ulaşabildiği kapsamlı bir emlak platformu geliştirdim. Platform, gayrimenkul keşfini kolay ve hızlı hale getirmeyi hedefliyor.",
   },
   {
     id: nanoid(),
@@ -149,7 +150,15 @@ export const projects = [
     url: "https://scandleted-five.vercel.app/",
     github: "https://github.com/cansu05/Scandleted",
     title: "Scandleted – E-Ticaret Web Uygulaması",
-    text: "Mum ürünlerinin sergilenmesi ve satışa sunulması amacıyla mobil uyumlu, modern bir e-ticaret web uygulaması geliştirilmiştir. Uygulama; ürün listeleme, ürün detay görüntüleme ve sepet üzerinden satın alma akışını kapsayan uçtan uca bir alışveriş deneyimi sunmaktadır. Proje Next.js 15 ve TypeScript ile geliştirilmiş, veri yönetimi için Prisma ve Supabase entegre edilmiştir. Kullanıcı kimlik doğrulama süreçleri Clerk ile sağlanmış, arayüz Tailwind CSS ve shadcn/ui kullanılarak tasarlanmıştır. Uygulama, yüksek performans ve ölçeklenebilirlik hedeflenerek Vercel üzerinde yayına alınmıştır.",
+    text: "Mum ürünlerinin sergilenmesi ve satın alınmasına yönelik modern bir e-ticaret deneyimi sunan web uygulaması geliştirdim. Kullanıcıların ürünleri inceleyip kolayca sipariş oluşturabilmesini sağlayan uçtan uca bir alışveriş akışı tasarladım.",
+  },
+  {
+    id: nanoid(),
+    images: [arekaWebsite],
+    url: "https://areka-corporate-website.vercel.app/tr",
+    github: "https://github.com/cansu05/Areka-Corporate-Website",
+    title: "Areka Carbon Hub - İklim Teknolojisi Platformu",
+    text: "Bireylerin ve kurumların karbon ayak izini anlamasına yardımcı olan, çok dilli içerik sunan modern bir kurumsal web sitesi geliştirdim. Platform, sürdürülebilirlik çözümlerini anlaşılır ve erişilebilir bir şekilde sunmayı amaçlıyor.",
   },
   {
     id: nanoid(),
@@ -173,16 +182,15 @@ export const projects = [
     url: "https://searches.csu.azureapp.net/user/login",
     github: "",
     title: "Wessex Searches – Kurumsal Dashboard Uygulaması",
-    text: "Veriland bünyesinde, İngiltere merkezli Wessex Searches firması için geliştirilen web tabanlı kurumsal bir dashboard uygulamasıdır. Uygulama; çok adımlı kullanıcı kayıt süreci, harita üzerinden lokasyon seçimi, ürün belirleme, sepet ve ödeme adımlarını kapsayan uçtan uca bir sipariş akışı sunmaktadır. Dashboard tarafında sipariş yönetimi, müşteri taleplerinin (queries/cases) oluşturulması ve takibi, kullanıcı ve şube yönetimi ile fatura ve ödeme süreçlerine yönelik operasyonel modüller geliştirilmiştir. Proje Next.js ve TypeScript kullanılarak geliştirilmiş; state yönetimi için Zustand ve Context API birlikte kullanılmıştır. Arayüz Tailwind CSS ve Material-UI ile modüler ve ölçeklenebilir bir mimariyle tasarlanmıştır.",
+    text: "Kurumsal kullanıcıların sipariş, müşteri talepleri ve operasyon süreçlerini tek bir panel üzerinden yönetmesini sağlayan kapsamlı bir dashboard geliştirilmesine katkı sağladım.",
   },
-
   {
     id: nanoid(),
     images: [rickAndMorty],
     url: "https://ricky-and-morty-omega-seven.vercel.app/character",
     github: "https://github.com/cansu05/RickyAndMorty",
     title: "Rick and Morty – Karakter Kataloğu Uygulaması",
-    text: "Rick and Morty açık API’si kullanılarak geliştirilen, karakter listeleme ve detay inceleme odaklı bir web uygulamasıdır. Proje Next.js 15 ve TypeScript ile geliştirilmiş; global state yönetimi için Redux Toolkit kullanılmıştır. Dinamik filtreleme ve sayfalama yapıları uygulanarak kullanıcı deneyimi güçlendirilmiş, responsive tasarım prensipleri doğrultusunda farklı cihazlara uyum sağlanmıştır. Uygulama Vercel üzerinde yayına alınmıştır.",
+    text: "Rick and Morty evrenindeki karakterleri keşfetmeye yönelik, filtreleme ve detay inceleme özellikleri sunan interaktif bir katalog uygulaması geliştirdim.",
   },
   {
     id: nanoid(),
@@ -190,14 +198,13 @@ export const projects = [
     url: "",
     github: "https://github.com/cansu05/Task-Flow",
     title: "TaskFlow – Görev Yönetim Uygulaması",
-    text: "Ekip içi iş birliğini destekleyen, sürükle-bırak özellikli modern bir görev yönetim web uygulaması geliştirilmiştir. Uygulama; görev oluşturma, düzenleme ve görevlerin farklı durumlar arasında taşınmasını destekleyen bir yapı sunmaktadır. Proje Next.js ve TypeScript ile geliştirilmiş, state yönetimi için Zustand tercih edilmiştir. Arayüz Material-UI ile tasarlanmış, performans ve kullanım kolaylığı ön planda tutulmuştur.",
+    text: "Ekiplerin görevleri planlayıp takip edebileceği, sürükle-bırak destekli modern bir görev yönetim uygulaması geliştirdim. Kullanıcıların iş akışlarını görsel olarak organize etmesini kolaylaştırır.",
   },
-
   {
     id: nanoid(),
     images: [blossom],
     github: "https://github.com/cansu05/Blossom",
     title: "Blossom – Mobil Ürün Kataloğu Uygulaması",
-    text: "Çiçek ve bitki ürünlerinin sergilenmesine yönelik geliştirilen, mobil odaklı bir ürün katalog uygulamasıdır. Uygulama; ürün listeleme, ürün detay görüntüleme ve favorilere ekleme gibi temel kullanıcı etkileşimlerini içermektedir. Proje React Native ve TypeScript kullanılarak geliştirilmiş, ürün verileri Firebase üzerinden yönetilmiştir. Global state yönetimi için Redux kullanılarak ürün ve favori akışları yapılandırılmıştır. Uygulamanın tüm arayüz tasarımı ve kullanıcı deneyimi çalışmaları tarafımdan gerçekleştirilmiştir.",
+    text: "Çiçek ve bitki ürünlerinin mobil ortamda kolayca keşfedilmesini sağlayan bir ürün katalog uygulaması geliştirdim. Kullanıcıların favori ürünlerini kaydedip daha sonra inceleyebilmesine olanak tanır.",
   },
 ];
