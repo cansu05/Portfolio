@@ -1,4 +1,4 @@
-import { nanoid } from "nanoid";
+﻿import { nanoid } from "nanoid";
 
 import rickAndMorty from "./assets/rickAndMorty.png";
 
@@ -35,6 +35,7 @@ import arekaDashboard1 from "./assets/images/areka-dashboard/areka-1.png";
 import arekaDashboard2 from "./assets/images/areka-dashboard/areka-2.png";
 import arekaDashboard3 from "./assets/images/areka-dashboard/areka-3.png";
 import arekaDashboard5 from "./assets/images/areka-dashboard/areka-5.png";
+import noteApp from "./assets/note-app.png";
 
 import blossom from "./assets/blossom.png";
 
@@ -204,6 +205,14 @@ export const projects = [
   },
   {
     id: nanoid(),
+    images: [noteApp],
+    url: "https://note-app-gold-theta.vercel.app/",
+    github: "https://github.com/cansu05/note-app",
+    title: "Note App - Not Y?netim Uygulamas?",
+    text: "Kullanıcıların not oluşturup düzenleyebildiği, sürükle-bırak desteğiyle notlarını kolayca sıralayabildiği modern bir not uygulaması geliştirdim.",
+  },
+  {
+    id: nanoid(),
     images: [rickAndMorty],
     url: "https://ricky-and-morty-omega-seven.vercel.app/character",
     github: "https://github.com/cansu05/RickyAndMorty",
@@ -218,6 +227,7 @@ export const projects = [
     title: "TaskFlow – Görev Yönetim Uygulaması",
     text: "Ekiplerin görevleri planlayıp takip edebileceği, sürükle-bırak destekli modern bir görev yönetim uygulaması geliştirdim. Kullanıcıların iş akışlarını görsel olarak organize etmesini kolaylaştırır.",
   },
+
   {
     id: nanoid(),
     images: [blossom],
