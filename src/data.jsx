@@ -31,6 +31,11 @@ import wessexDashboard13 from "./assets/images/wessex-dashboard/dashboard13.png"
 import wessexDashboard14 from "./assets/images/wessex-dashboard/dashboard14.png";
 import wessexDashboard15 from "./assets/images/wessex-dashboard/dashboard15.png";
 
+import arekaDashboard1 from "./assets/images/areka-dashboard/areka-1.png";
+import arekaDashboard2 from "./assets/images/areka-dashboard/areka-2.png";
+import arekaDashboard3 from "./assets/images/areka-dashboard/areka-3.png";
+import arekaDashboard5 from "./assets/images/areka-dashboard/areka-5.png";
+
 import blossom from "./assets/blossom.png";
 
 export const links = [
@@ -102,7 +107,7 @@ export const socials = [
   },
   {
     id: nanoid(),
-    href: "https://drive.google.com/file/d/1KaavUq2PZpmDGkuKlmz1WmNpM2eq_Fv-/view?usp=sharing",
+    href: "https://drive.google.com/file/d/18V0-mR0IY_uWV2Bz9CHb0vNVqrmR2ar4/view?usp=sharing",
     name: "resume",
   },
 ];
@@ -158,7 +163,20 @@ export const projects = [
     url: "https://areka-corporate-website.vercel.app",
     github: "https://github.com/cansu05/Areka-Corporate-Website",
     title: "Areka Carbon Hub - İklim Teknolojisi Platformu",
-    text: "Bireylerin ve kurumların karbon ayak izini anlamasına yardımcı olan, çok dilli içerik sunan modern bir kurumsal web sitesi geliştirdim. Platform, sürdürülebilirlik çözümlerini anlaşılır ve erişilebilir bir şekilde sunmayı amaçlıyor.",
+    text: "Çalıştığım şirket bünyesinde, bireylerin ve kurumların karbon ayak izini anlamasına yardımcı olan, çok dilli içerik sunan modern bir kurumsal web sitesi geliştirdim. Platform, sürdürülebilirlik çözümlerini anlaşılır ve erişilebilir bir şekilde sunmayı amaçlıyor.",
+  },
+  {
+    id: nanoid(),
+    images: [
+      arekaDashboard1,
+      arekaDashboard2,
+      arekaDashboard3,
+      arekaDashboard5,
+    ],
+    url: "https://app.areka.ai/",
+    github: "",
+    title: "Areka Carbon Hub - Dashboard Uygulaması",
+    text: "Çalıştığım şirket bünyesinde, kullanıcıların karbon emisyonlarını hesaplayıp dengeleyebildiği, emisyon süreçlerini tek panel üzerinden takip edebildiği modern bir dashboard uygulaması geliştirdim.",
   },
   {
     id: nanoid(),
@@ -182,7 +200,7 @@ export const projects = [
     url: "https://searches.csu.azureapp.net/user/login",
     github: "",
     title: "Wessex Searches – Kurumsal Dashboard Uygulaması",
-    text: "Kurumsal kullanıcıların sipariş, müşteri talepleri ve operasyon süreçlerini tek bir panel üzerinden yönetmesini sağlayan kapsamlı bir dashboard geliştirilmesine katkı sağladım.",
+    text: "Çalıştığım şirket bünyesinde, kurumsal kullanıcıların sipariş, müşteri talepleri ve operasyon süreçlerini tek bir panel üzerinden yönetmesini sağlayan kapsamlı bir dashboard geliştirilmesine katkı sağladım.",
   },
   {
     id: nanoid(),
