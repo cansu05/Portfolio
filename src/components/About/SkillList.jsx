@@ -12,8 +12,8 @@ const SkillList = () => {
         mt: 1,
       }}
     >
-      {skillsData.map((item, index) => (
-        <Box key={index}>
+      {skillsData.map((item) => (
+        <Box key={item.category}>
           <Typography variant="h6" fontWeight={600} sx={{ mb: 1 }}>
             {item.category}
           </Typography>
@@ -22,8 +22,8 @@ const SkillList = () => {
             component="ul"
             sx={{ pl: 3, m: 0, color: "text.primary", listStyle: "disc" }}
           >
-            {item.skills.map((skill, idx) => (
-              <Box component="li" key={idx} sx={{ mb: 0.5 }}>
+            {item.skills.map((skill) => (
+              <Box component="li" key={`${item.category}-${skill}`} sx={{ mb: 0.5 }}>
                 {skill}
               </Box>
             ))}

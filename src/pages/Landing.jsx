@@ -1,16 +1,19 @@
+import { Box, Container, Link, Stack, Typography } from "@mui/material";
 import portfolio from "../assets/portfolio-image.png";
 import Icon from "../components/Icon";
 import Seo from "../components/Seo";
 import TypeWriter from "../components/TypeWriter";
 import { socials } from "../data";
-import { Box, Container, Link, Stack, Typography } from "@mui/material";
+
+const HERO_WIDTH = 362;
+const HERO_HEIGHT = 293;
 
 const Landing = () => {
   return (
     <>
       <Seo
-        title="Ana Sayfa | Portfoy"
-        description="Cansu Ugur frontend developer portfolio ana sayfasi."
+        title="Ana Sayfa | Portföy"
+        description="Frontend developer portföy ana sayfası."
       />
       <Container
         component="section"
@@ -23,21 +26,25 @@ const Landing = () => {
           alignItems: "center",
           justifyContent: "center",
           gap: { xs: "40px", lg: "80px" },
-          mt: { lg: 0 },
         }}
       >
         <Box>
           <Box
             component="img"
             src={portfolio}
-            alt="portfolio"
+            alt="Cansu Uğur portföy görseli"
+            width={HERO_WIDTH}
+            height={HERO_HEIGHT}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
             sx={{ width: { xs: "100%", md: 500 }, height: "auto" }}
           />
         </Box>
 
         <Stack spacing={2}>
           <Stack spacing={2} justifyContent="center">
-            <Typography variant="h3" fontWeight={900}>
+            <Typography component="h1" variant="h3" fontWeight={700}>
               CANSU UĞUR
             </Typography>
             <TypeWriter text="Front-end Developer" />
@@ -53,14 +60,18 @@ const Landing = () => {
             </Typography>
           </Stack>
           <Stack direction="row" spacing={1} justifyContent="center">
-            {socials.map((social) => {
-              const { id, href, name } = social;
-              return (
-                <Link key={id} href={href} target="_blank" rel="noreferrer">
-                  <Icon name={name} />
-                </Link>
-              );
-            })}
+            {socials.map(({ id, href, name }) => (
+              <Link
+                key={id}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={name}
+                title={name}
+              >
+                <Icon name={name} />
+              </Link>
+            ))}
           </Stack>
         </Stack>
       </Container>

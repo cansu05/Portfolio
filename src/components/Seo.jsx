@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import PropTypes from "prop-types";
 
 function upsertMetaByName(name, content) {
   if (!content) return;
@@ -46,3 +47,10 @@ export default function Seo({ title, description, canonical, ogImage }) {
 
   return null;
 }
+
+Seo.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  canonical: PropTypes.string,
+  ogImage: PropTypes.string,
+};

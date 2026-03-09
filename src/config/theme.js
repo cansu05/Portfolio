@@ -16,20 +16,20 @@ export function getTheme(mode) {
       },
 
       text: {
-        primary: "#424242",
-        secondary: "#ffffff",
+        primary: COLORS.charcoal,
+        secondary: COLORS.white,
       },
 
-      divider: alpha("#0F172A", 0.1),
+      divider: alpha(COLORS.charcoal, 0.12),
 
       icon: {
-        main: "#424242",
-        secondary: "#ffffff",
+        main: COLORS.charcoal,
+        secondary: COLORS.white,
       },
     },
 
     typography: {
-      fontFamily: `"Montserrat", "Roboto", "Helvetica", "Arial", sans-serif`,
+      fontFamily: `"Montserrat", "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif`,
       subtitle1: { fontSize: 18, lineHeight: 1.7, textAlign: "justify" },
       button: { textTransform: "none", fontWeight: 500 },
     },

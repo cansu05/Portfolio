@@ -9,12 +9,15 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { LAYOUT } from "../../config/layout";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const navBackground = "secondary.main";
+  const sidebarWidth = `${LAYOUT.sidebarWidth}px`;
 
   return (
     <>
@@ -22,12 +25,12 @@ const Navbar = () => {
         position="fixed"
         sx={{
           display: { xs: "block", lg: "none" },
-          bgcolor: "#BDB6AC",
+          bgcolor: navBackground,
           color: "text.primary",
           boxShadow: "none",
         }}
       >
-        <Toolbar sx={{ minHeight: 80 }}>
+        <Toolbar sx={{ minHeight: LAYOUT.mobileNavbarHeight }}>
           <IconButton
             edge="start"
             color="inherit"
@@ -36,7 +39,7 @@ const Navbar = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" fontWeight={700} sx={{ ml: 1 }}>
+          <Typography component="span" variant="h6" fontWeight={700} sx={{ ml: 1 }}>
             Menü
           </Typography>
         </Toolbar>
@@ -47,7 +50,7 @@ const Navbar = () => {
           sx={{
             width: 260,
             p: 3,
-            bgcolor: "#BDB6AC",
+            bgcolor: navBackground,
             height: "100%",
             display: "flex",
             alignItems: "center",
@@ -66,7 +69,7 @@ const Navbar = () => {
         sx={{
           display: { xs: "none", lg: "flex" },
           transition: "background-color 0.3s ease",
-          bgcolor: "#BDB6AC",
+          bgcolor: navBackground,
           height: "100vh",
           flexDirection: "column",
           alignItems: "center",
@@ -77,7 +80,7 @@ const Navbar = () => {
           top: 0,
           left: 0,
           zIndex: (theme) => theme.zIndex.appBar,
-          width: "336px",
+          width: sidebarWidth,
         }}
       >
         <NavLinks direction="column" />
@@ -87,3 +90,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

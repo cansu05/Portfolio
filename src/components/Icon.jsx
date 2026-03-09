@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import DescriptionIcon from "@mui/icons-material/Description";
+import PropTypes from "prop-types";
 
 const iconMap = {
   github: GitHubIcon,
@@ -29,6 +30,10 @@ const Icon = ({ name }) => {
       }}
     />
   );
+};
+
+Icon.propTypes = {
+  name: PropTypes.string.isRequired,
 };
 
 export default Icon;

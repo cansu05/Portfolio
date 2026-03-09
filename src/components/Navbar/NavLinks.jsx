@@ -1,6 +1,7 @@
 import { NavLink } from "react-router";
 import { links } from "../../data";
 import { Box, Stack } from "@mui/material";
+import PropTypes from "prop-types";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
@@ -67,4 +68,11 @@ const NavLinks = ({ direction = "column", align = "flex-start", onNavigate }) =>
     </Stack>
   );
 };
+
+NavLinks.propTypes = {
+  direction: PropTypes.oneOf(["row", "column"]),
+  align: PropTypes.string,
+  onNavigate: PropTypes.func,
+};
+
 export default NavLinks;

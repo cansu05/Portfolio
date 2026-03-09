@@ -5,7 +5,7 @@ const Knowledge = () => {
   return (
     <Container
       component="section"
-      maxWidth="xl"
+      maxWidth="lg"
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -15,6 +15,7 @@ const Knowledge = () => {
       }}
     >
       <Typography
+        component="h2"
         variant="h5"
         fontWeight={700}
         sx={{ letterSpacing: "0.04em" }}

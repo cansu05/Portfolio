@@ -5,7 +5,7 @@ const CareerPath = () => {
   return (
     <Container
       component="section"
-      maxWidth="xl"
+      maxWidth="lg"
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -15,12 +15,12 @@ const CareerPath = () => {
         mt: 2,
       }}
     >
-      <Typography variant="h5" fontWeight={700}>
+      <Typography component="h2" variant="h5" fontWeight={700}>
         Deneyimlerim
       </Typography>
       {experienceData.map((exp, index) => (
         <Stack
-          key={index}
+          key={`${exp.company}-${exp.year}`}
           direction="row"
           alignItems="center"
           spacing={2}
@@ -63,8 +63,8 @@ const CareerPath = () => {
           <Stack direction="row" alignItems="center" spacing={3}>
             <Box
               sx={{
-                bgcolor: "#908275",
-                color: "#fff",
+                bgcolor: "background.paper",
+                color: "text.secondary",
                 px: 1.5,
                 py: 0.5,
                 borderRadius: 1,

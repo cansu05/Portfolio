@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { alpha } from "@mui/material/styles";
 import {
   Box,
   Button,
@@ -12,20 +13,58 @@ import {
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, priority = false }) => {
   const { title, images = [], text, url, github } = project;
   const [activeStep, setActiveStep] = useState(0);
   const [isImageLoading, setIsImageLoading] = useState(images.length > 0);
+  const imageRef = useRef(null);
   const maxSteps = images.length || 0;
   const IMAGE_ASPECT_RATIO = "16 / 10";
+  const navButtonSx = {
+    position: "absolute",
+    top: "50%",
+    transform: "translateY(-50%)",
+    zIndex: 10,
+    width: 36,
+    height: 36,
+    bgcolor: (theme) => alpha(theme.palette.background.default, 0.9),
+    border: (theme) =>
+      `1px solid ${alpha(theme.palette.background.paper, 0.45)}`,
+    "&:hover": { bgcolor: "primary.main" },
+  };
+  const actionButtonSx = {
+    minWidth: 120,
+    px: 2,
+    py: 1.25,
+    bgcolor: "background.default",
+    color: "text.primary",
+    fontSize: 14,
+    fontWeight: 500,
+    borderRadius: 2,
+    textTransform: "none",
+    "&:hover": { bgcolor: "secondary.main" },
+  };
 
   useEffect(() => {
-    if (images.length > 0) {
-      setIsImageLoading(true);
-    } else {
+    if (activeStep > Math.max(maxSteps - 1, 0)) {
+      setActiveStep(0);
+    }
+  }, [activeStep, maxSteps]);
+
+  useEffect(() => {
+    const currentImage = images[activeStep];
+    if (!currentImage) {
+      setIsImageLoading(false);
+      return;
+    }
+
+    setIsImageLoading(true);
+
+    // Cached images can skip onLoad in dev StrictMode; handle it explicitly.
+    if (imageRef.current?.complete) {
       setIsImageLoading(false);
     }
-  }, [activeStep, images.length]);
+  }, [activeStep, images]);
 
   return (
     <Box
@@ -56,9 +95,12 @@ const ProjectCard = ({ project }) => {
         >
           <Box
             component="img"
+            ref={imageRef}
             src={images[activeStep]}
             alt={title}
-            loading="lazy"
+            loading={priority ? "eager" : "lazy"}
+            decoding="async"
+            fetchPriority={priority ? "high" : "low"}
             onLoad={() => setIsImageLoading(false)}
             onError={() => setIsImageLoading(false)}
             sx={{
@@ -77,7 +119,8 @@ const ProjectCard = ({ project }) => {
               sx={{
                 position: "absolute",
                 inset: 0,
-                bgcolor: "rgba(223, 213, 201, 0.22)",
+                bgcolor: (theme) =>
+                  alpha(theme.palette.background.default, 0.22),
               }}
             />
           )}
@@ -89,16 +132,8 @@ const ProjectCard = ({ project }) => {
                 aria-label="Previous image"
                 disabled={activeStep === 0}
                 sx={{
-                  position: "absolute",
                   left: 8,
-                  top: "50%",
-                  transform: "translateY(-50%)",
-                  zIndex: 10,
-                  width: 36,
-                  height: 36,
-                  bgcolor: "rgba(223, 213, 201, 0.9)",
-                  border: "1px solid rgba(144, 130, 117, 0.4)",
-                  "&:hover": { bgcolor: "primary.main" },
+                  ...navButtonSx,
                 }}
               >
                 <ChevronLeftIcon sx={{ color: "secondary.main" }} />
@@ -112,16 +147,8 @@ const ProjectCard = ({ project }) => {
                 aria-label="Next image"
                 disabled={activeStep === maxSteps - 1}
                 sx={{
-                  position: "absolute",
                   right: 8,
-                  top: "50%",
-                  transform: "translateY(-50%)",
-                  zIndex: 10,
-                  width: 36,
-                  height: 36,
-                  bgcolor: "rgba(223, 213, 201, 0.9)",
-                  border: "1px solid rgba(144, 130, 117, 0.4)",
-                  "&:hover": { bgcolor: "primary.main" },
+                  ...navButtonSx,
                 }}
               >
                 <ChevronRightIcon sx={{ color: "secondary.main" }} />
@@ -141,8 +168,12 @@ const ProjectCard = ({ project }) => {
             width: "100%",
             justifyContent: "center",
             "& .MuiMobileStepper-dots": { margin: 0 },
-            "& .MuiMobileStepper-dot": { bgcolor: "rgba(255, 255, 255, 0.5)" },
-            "& .MuiMobileStepper-dotActive": { bgcolor: "#DFD5C9" },
+            "& .MuiMobileStepper-dot": {
+              bgcolor: (theme) => alpha(theme.palette.common.white, 0.5),
+            },
+            "& .MuiMobileStepper-dotActive": {
+              bgcolor: "background.default",
+            },
           }}
           nextButton={null}
           backButton={null}
@@ -162,9 +193,10 @@ const ProjectCard = ({ project }) => {
       >
         <Box>
           <Typography
+            component="h2"
             variant="h6"
-            fontWeight={900}
-            color="#fff"
+            fontWeight={700}
+            color="common.white"
             sx={{
               minHeight: "2.3rem",
               textAlign: "center",
@@ -176,7 +208,7 @@ const ProjectCard = ({ project }) => {
           </Typography>
           <Typography
             variant="body1"
-            color="#fff"
+            color="common.white"
             fontWeight={500}
             sx={{
               letterSpacing: "0.03em",
@@ -198,18 +230,7 @@ const ProjectCard = ({ project }) => {
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              sx={{
-                minWidth: 120,
-                px: 2,
-                py: 1.25,
-                bgcolor: "background.default",
-                color: "text.primary",
-                fontSize: 14,
-                fontWeight: 500,
-                borderRadius: 2,
-                textTransform: "none",
-                "&:hover": { bgcolor: "secondary.main" },
-              }}
+              sx={actionButtonSx}
             >
               Canlı Site
             </Button>
@@ -220,18 +241,7 @@ const ProjectCard = ({ project }) => {
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              sx={{
-                minWidth: 120,
-                px: 2,
-                py: 1.25,
-                bgcolor: "background.default",
-                color: "text.primary",
-                fontSize: 14,
-                fontWeight: 500,
-                borderRadius: 2,
-                textTransform: "none",
-                "&:hover": { bgcolor: "secondary.main" },
-              }}
+              sx={actionButtonSx}
             >
               Kaynak Kod
             </Button>
@@ -250,6 +260,9 @@ ProjectCard.propTypes = {
     github: PropTypes.string,
     text: PropTypes.string,
   }).isRequired,
+  priority: PropTypes.bool,
 };
 
 export default ProjectCard;
+
+

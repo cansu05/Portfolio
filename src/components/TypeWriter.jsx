@@ -7,6 +7,11 @@ const TypeWriter = ({ text }) => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
+    setDisplayText("");
+    setIndex(0);
+  }, [text]);
+
+  useEffect(() => {
     if (index < text.length) {
       const timeout = setTimeout(() => {
         setDisplayText((prev) => prev + text[index]);
@@ -18,7 +23,16 @@ const TypeWriter = ({ text }) => {
   }, [index, text]);
 
   return (
-    <Typography variant="h6" fontWeight={500} sx={{ letterSpacing: "0.04em" }}>
+    <Typography
+      component="p"
+      variant="h6"
+      fontWeight={500}
+      sx={{
+        letterSpacing: "0.04em",
+        minHeight: "1.5em",
+        minWidth: `${text.length}ch`,
+      }}
+    >
       {displayText}
     </Typography>
   );

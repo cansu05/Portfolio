@@ -1,12 +1,19 @@
-import About from "./pages/About";
+import { lazy, Suspense } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router";
-import Landing from "./pages/Landing";
 import MainLayout from "./layouts/Main";
-import Projects from "./pages/Projects";
+import { ROUTES } from "./config/routes";
+import Landing from "./pages/Landing";
+
+const About = lazy(() => import("./pages/About"));
+const Projects = lazy(() => import("./pages/Projects"));
+
+const withSuspense = (component) => (
+  <Suspense fallback={null}>{component}</Suspense>
+);
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: ROUTES.home,
     element: <MainLayout />,
     children: [
       {
@@ -14,12 +21,12 @@ const router = createBrowserRouter([
         element: <Landing />,
       },
       {
-        path: "about",
-        element: <About />,
+        path: ROUTES.about,
+        element: withSuspense(<About />),
       },
       {
-        path: "projects",
-        element: <Projects />,
+        path: ROUTES.projects,
+        element: withSuspense(<Projects />),
       },
     ],
   },

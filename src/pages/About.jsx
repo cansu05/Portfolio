@@ -1,17 +1,18 @@
-import CareerPath from "../components/About/CareerPath ";
-import PersonalDetails from "../components/About/PersonalDetails";
-import Knowledge from "../components/About/Knowledge";
-import Seo from "../components/Seo";
 import { Box } from "@mui/material";
+import CareerPath from "../components/About/CareerPath";
+import Knowledge from "../components/About/Knowledge";
+import PersonalDetails from "../components/About/PersonalDetails";
+import Seo from "../components/Seo";
+import { LAYOUT } from "../config/layout";
 
 const About = () => {
   return (
     <>
       <Seo
-        title="Hakkimda | Portfoy"
-        description="Cansu Ugur hakkinda bilgiler, kariyer yolu ve yetkinlikler."
+        title="Hakkımda | Portföy"
+        description="Cansu Uğur hakkında bilgiler, kariyer yolu ve yetkinlikler."
       />
-      <Box sx={{ my: { xs: 10, lg: 10 }, mt: { xs: 16, lg: 10 } }}>
+      <Box sx={{ my: 10, mt: LAYOUT.sectionTopSpacing }}>
         <PersonalDetails />
         <CareerPath />
         <Knowledge />
