@@ -98,6 +98,8 @@ const ProjectCard = ({ project, priority = false }) => {
             ref={imageRef}
             src={images[activeStep]}
             alt={title}
+            width={1600}
+            height={1000}
             loading={priority ? "eager" : "lazy"}
             decoding="async"
             fetchPriority={priority ? "high" : "low"}

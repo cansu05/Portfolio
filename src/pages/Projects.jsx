@@ -74,14 +74,7 @@ const Projects = () => {
               }}
             >
               {visibleProjects.map((project, index) => (
-                <Box
-                  key={project.id}
-                  sx={{
-                    height: { xs: "auto", sm: "100%" },
-                    contentVisibility: "auto",
-                    containIntrinsicSize: "700px",
-                  }}
-                >
+                <Box key={project.id} sx={{ height: { xs: "auto", sm: "100%" } }}>
                   <ProjectCard project={project} priority={index === 0} />
                 </Box>
               ))}
