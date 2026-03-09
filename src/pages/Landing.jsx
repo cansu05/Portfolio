@@ -1,5 +1,5 @@
 import { Box, Container, Link, Stack, Typography } from "@mui/material";
-import portfolio from "../assets/portfolio-image.png";
+import portfolio from "../assets/portfolio-image.webp";
 import Icon from "../components/Icon";
 import Seo from "../components/Seo";
 import TypeWriter from "../components/TypeWriter";
